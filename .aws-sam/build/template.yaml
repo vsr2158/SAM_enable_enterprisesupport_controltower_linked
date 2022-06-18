@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Enroll account into Enterprise Support
+
+  '
+Resources:
+  FunctionEnableEnterpriseSupport:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: FunctionEnableEnterpriseSupport
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Timeout: 60
+      Role:
+        Fn::GetAtt:
+        - RoleEnableEnterpriseSupport
+        - Arn
+      Architectures:
+      - x86_64
+      Environment:
+        Variables:
+          LOG_LEVEL: DEBUG
+      Events:
+        ServiceCatalog:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              source:
+              - aws.controltower
+              detail-type:
+              - AWS Service Event via CloudTrail
+              detail:
+                eventName:
+                - CreateManagedAccount
+    Metadata:
+      SamResourceId: FunctionEnableEnterpriseSupport
+  RoleEnableEnterpriseSupport:
+    Type: AWS::IAM::Role
+    Properties:
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      - arn:aws:iam::aws:policy/AWSSupportAccess
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: /
