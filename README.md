@@ -14,7 +14,7 @@ This project contains source code and supporting files for a serverless applicat
 - template.yaml - A template that defines the application's AWS resources.
 
 ### Architecture
-![](https://github.com/vsr2158/ControlTower_ConfigRecorder_override/blob/main/AWS-ControlTower-ConfigRecorder-Override.drawio.png?raw=1)
+![](https://github.com/vsr2158/SAM_enable_enterprisesupport_controltower_linked/blob/master/enable_es.drawio.png?raw=1)
 
 ## Deploy
 
