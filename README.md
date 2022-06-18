@@ -16,6 +16,20 @@ This project contains source code and supporting files for a serverless applicat
 ### Architecture
 ![](https://github.com/vsr2158/SAM_enable_enterprisesupport_controltower_linked/blob/master/enable_es.drawio.png?raw=1)
 
+
+## Pre Requisites
+
+* IAM user or profile with permission to create all the required resources as per the architecture
+* Enterprise support enabled on the management account, this allows for AWS Support API access
+
+
+The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda.
+
+To use the SAM CLI, you need the following tools:
+
+* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* [Python 3 installed](https://www.python.org/downloads/)
+
 ## Clone the repo
 
 ```bash
@@ -25,12 +39,6 @@ cd SAM_enable_enterprisesupport_controltower_linked/
 
 ## Deploy
 
-The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda.
-
-To use the SAM CLI, you need the following tools:
-
-* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* [Python 3 installed](https://www.python.org/downloads/)
 
 To build and deploy your application for the first time, run the following in your shell:
 
