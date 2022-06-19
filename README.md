@@ -1,12 +1,10 @@
 # Enable Enterprise Support on AWS Control Tower Linked Account 
 
-Using multi account strategy to manage your AWS environment is recommended best practice. One way to manage and govern multi account is to use [AWS Control Tower](https://aws.amazon.com/controltower/).
+One of the best practices of managing mulitple accounts in the AWS environments is to leverage use of [AWS Control Tower](https://aws.amazon.com/controltower/).
 
-As part of operational activity all AWS accounts needs to be enrolled into the right [support level](https://aws.amazon.com/premiumsupport/plans/). AWS Control Tower makes account creation with required security and gobernance controls easy, and provides you options to do further customizations using [lifecycle events](https://docs.aws.amazon.com/controltower/latest/userguide/lifecycle-events.html).
+As part of operational activity all AWS accounts needs to be enrolled with the right [support level](https://aws.amazon.com/premiumsupport/plans/). By the use of AWS Control Tower account creation with required security and governance controls becomes easy, and provides options to further customize using [lifecycle events](https://docs.aws.amazon.com/controltower/latest/userguide/lifecycle-events.html).
 
-This project utilizes once such event "CreateManagedAccount" to automate support case creation requesting the newly created account to be enrolled in Enterprise Support tier. 
-
-AWS Serverless Application Model is a great way to package and quickly deploy serverless applications such of these which are completely event driven, to learn more about SAM refer to [AWS documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html).
+This project utilizes one such event "CreateManagedAccount" to automate support case creation while requesting the newly created account to be enrolled in Enterprise Support tier. 
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders:
 
@@ -22,13 +20,12 @@ This project contains source code and supporting files for a serverless applicat
 * IAM user or profile with permission to create all the required resources as per the architecture
 * Enterprise support enabled on the management account, this allows for AWS Support API access
 * Deployment should be done in Control Tower home region
-
-The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda.
-
-To use the SAM CLI, you need the following tools:
-
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * [Python 3 installed](https://www.python.org/downloads/)
+
+AWS Serverless Application Model is a great way to package and quickly deploy serverless applications such of these which are completely event driven, to learn more about SAM refer to [AWS documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html).
+
+The SAM CLI is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda.
 
 ## Clone the repo
 
@@ -57,7 +54,7 @@ The first command will build the source of your application. The second command 
 
 ## Cleanup
 
-To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
+Finally to delete the application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
 aws cloudformation delete-stack --stack-name function_enable_enterprisesupport_controltower_linked
@@ -66,5 +63,3 @@ aws cloudformation delete-stack --stack-name function_enable_enterprisesupport_c
 ## Resources
 
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
-
-Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
