@@ -1,6 +1,6 @@
-# Enable Enterprise Support on AWS Control Tower Linked Account 
+# Automate Enterprise Support Enrollment on AWS Control Tower Linked Accounts 
 
-One of the best practices of managing mulitple accounts in the AWS environments is to leverage use of [AWS Control Tower](https://aws.amazon.com/controltower/).
+One of the best practices of managing multiple accounts in the AWS environments is to leverage use of [AWS Control Tower](https://aws.amazon.com/controltower/).
 
 As part of operational activity all AWS accounts needs to be enrolled with the right [support level](https://aws.amazon.com/premiumsupport/plans/). By the use of AWS Control Tower account creation with required security and governance controls becomes easy, and provides options to further customize using [lifecycle events](https://docs.aws.amazon.com/controltower/latest/userguide/lifecycle-events.html).
 
@@ -31,7 +31,6 @@ The SAM CLI is an extension of the AWS CLI that adds functionality for building 
 
 ```bash
 git clone https://github.com/vsr2158/SAM_enable_enterprisesupport_controltower_linked.git
-cd SAM_enable_enterprisesupport_controltower_linked/
 ```
 
 ## Deploy
@@ -40,6 +39,7 @@ cd SAM_enable_enterprisesupport_controltower_linked/
 To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
+cd SAM_enable_enterprisesupport_controltower_linked/
 sam build 
 sam deploy --guided
 ```
